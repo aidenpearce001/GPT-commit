@@ -1,9 +1,17 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "gpt-commit"
-version = "0.1.0"
-description = "Add your description here"
+version = "0.0.1"
+description = "Generate a Conventional Commit message from your staged diff using OpenAI's GPT."
 readme = "README.md"
-requires-python = ">=3.9"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
 dependencies = [
-    "setuptools>=80.3.1",
+  "openai",
 ]
+
+[project.scripts]
+gpt-commit-message = "gpt_commit.main:main"
