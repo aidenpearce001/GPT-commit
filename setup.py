@@ -1,15 +1,17 @@
+# setup.py
 from setuptools import setup, find_packages
 
 setup(
-    name="gpt-commit",              # choose your package name
-    version="0.1.0",
-    packages=find_packages(),       # will pick up your scripts/ folder
+    name="gpt-commit",
+    version="0.1.1",
+    packages=find_packages(),
+    python_requires=">=3.9",
     install_requires=[
-        "openai>=0.27.0",           # whatever minimum you need
+        "openai",
     ],
     entry_points={
         "console_scripts": [
             "gpt-commit-message = scripts.gpt_commit:main",
-        ]
-    }
+        ],
+    },
 )
