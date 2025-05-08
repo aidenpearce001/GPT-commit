@@ -1,34 +1,10 @@
-repos:
--   repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.5.0
-    hooks:
-    -   id: trailing-whitespace
-    -   id: end-of-file-fixer
-    -   id: check-yaml
-    -   id: check-added-large-files
-
--   repo: https://github.com/commitizen-tools/commitizen
-    rev: v2.42.0
-    hooks:
-    -   id: commitizen
-        stages: [commit-msg]
-
--   repo: local
-    hooks:
-    -   id: gpt-commit-message
-        name: GPT Commit Message
-        entry: python scripts/gpt_commit.py
-        language: python
-        additional_dependencies: [openai]
-        stages: [prepare-commit-msg]
-        args: [.git/COMMIT_EDITMSG]
-        pass_filenames: false
-
-default_install_hook_types: [pre-commit, prepare-commit-msg]
-default_stages: [pre-commit, pre-merge-commit]
-ci:
-    autofix_commit_msg: |
-        [pre-commit.ci] auto fixes from pre-commit.com hooks
-    autofix_prs: true
-    autoupdate_schedule: weekly
-    autoupdate_commit_msg: 'chore: pre-commit autoupdate'
+- repo: local
+  hooks:
+    - id: gpt-commit-message
+      name: GPT Commit Message
+      entry: python {{cookiecutter.project_slug}}/scripts/gpt_commit.py
+      language: python
+      additional_dependencies: [openai]
+      stages: [prepare-commit-msg]
+      args: [.git/COMMIT_EDITMSG]
+      pass_filenames: false
