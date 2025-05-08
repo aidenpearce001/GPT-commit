@@ -3,9 +3,9 @@ from setuptools import setup, find_packages
 
 setup(
     name="gpt-commit",
-    version="0.1.1",
-    packages=find_packages(),
-    python_requires=">=3.9",
+    version="0.0.1",               # bump for each release
+    python_requires=">=3.10",
+    packages=find_packages(),      # will pick up scripts/
     install_requires=[
         "openai",
     ],
