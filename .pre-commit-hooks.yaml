@@ -8,4 +8,4 @@
     language: python
     pass_filenames: false
     stages: [prepare-commit-msg]
-    additional_dependencies: [openai>=0.27.0]
+    additional_dependencies: [openai]
