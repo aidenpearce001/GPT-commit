@@ -1,0 +1,8 @@
+{
+    "project_name": "GPT Commit Assistant",
+    "project_slug": "gpt_commit_assistant",
+    "author_name": "Aiden Pearce",
+    "email": "nam.tran@yitec.group",
+    "description": "A pre-commit hook using GPT to auto-generate commit messages",
+    "openai_model": "gpt-4"
+  }
