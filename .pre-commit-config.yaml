@@ -1,0 +1,14 @@
+repos:
+- repo: local
+  hooks:
+  - id: gpt-commit-message
+    name: GPT Commit Message
+    description: >
+      Generates a Conventional Commit message using OpenAI GPT based on the staged code diff.
+    entry: scripts/gpt_commit.py
+    language: python
+    types: [text]
+    pass_filenames: false
+    args: [.git/COMMIT_EDITMSG]
+    stages: [prepare-commit-msg]
+    additional_dependencies: [openai]
