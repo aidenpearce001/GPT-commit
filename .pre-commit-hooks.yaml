@@ -1,11 +1,11 @@
-- id: gpt-commit-message
-  name: GPT Commit Message
-  description: >
-    Generates a Conventional Commit message using OpenAI GPT based on the staged code diff.
-  entry: scripts/gpt_commit.py
-  language: python
-  types: [text]
-  pass_filenames: false
-  args: [.git/COMMIT_EDITMSG]
-  stages: [prepare-commit-msg]
-  additional_dependencies: [openai]
+# .pre-commit-hooks.yaml
+-   id: gpt-commit-message
+    name: GPT Commit Message
+    description: |
+      Generate a Conventional Commit message using OpenAI GPT
+      from your staged diff.
+    entry: gpt-commit-message          # this matches the console_scripts entry-point
+    language: python
+    pass_filenames: false
+    stages: [prepare-commit-msg]
+    additional_dependencies: [openai>=0.27.0]
